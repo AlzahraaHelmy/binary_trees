@@ -31,12 +31,12 @@ int binary_tree_balance(const binary_tree_t *tree)
 		if ((tree->left && tree->right) ||
 (tree->left == NULL && tree->right == NULL))
 			return (binary_tree_heightt(tree->left) - binary_tree_heightt(tree->right));
-		else if (tree->left)
-			return (binary_tree_heightt(tree->left) -
-binary_tree_heightt(tree->right) + 1);
-		else
+		else if (tree->right)
 			return (binary_tree_heightt(tree->left) -
 binary_tree_heightt(tree->right) - 1);
+		else
+			return (binary_tree_heightt(tree->left) -
+binary_tree_heightt(tree->right) + 1);
 	}
 	return (0);
 }
